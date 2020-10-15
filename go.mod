@@ -1,4 +1,4 @@
-module caddy-pprof
+module github.com/imgk/caddy-pprof
 
 go 1.15
 
