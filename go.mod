@@ -1,5 +1,5 @@
 module github.com/imgk/caddy-pprof
 
-go 1.15
+go 1.16
 
-require github.com/caddyserver/caddy/v2 v2.2.0
+require github.com/caddyserver/caddy/v2 v2.3.0

@@ -6,11 +6,14 @@ import (
 	"strings"
 
 	"github.com/caddyserver/caddy/v2"
+	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
 	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
 )
 
 func init() {
 	caddy.RegisterModule(Handler{})
+	httpcaddyfile.RegisterHandlerDirective("pprof", parseCaddyfile)
 }
 
 // Handler implements an HTTP handler that ...
@@ -33,7 +36,17 @@ func (m *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request, next caddyht
 	return next.ServeHTTP(w, r)
 }
 
+// UnmarshalCaddyfile unmarshals Caddyfile tokens into h.
+func (h *Handler) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
+	return nil
+}
+
+func parseCaddyfile(h httpcaddyfile.Helper) (caddyhttp.MiddlewareHandler, error) {
+	return &Handler{}, nil
+}
+
 // Interface guards
 var (
 	_ caddyhttp.MiddlewareHandler = (*Handler)(nil)
+	_ caddyfile.Unmarshaler       = (*Handler)(nil)
 )
