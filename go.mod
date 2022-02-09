@@ -2,10 +2,7 @@ module github.com/imgk/caddy-pprof
 
 go 1.17
 
-require (
-	github.com/caddyserver/caddy/v2 v2.4.6
-	github.com/google/pprof v0.0.0-20210601050228-01bbb1931b22
-)
+require github.com/caddyserver/caddy/v2 v2.4.6
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
@@ -35,7 +32,6 @@ require (
 	github.com/google/cel-go v0.7.3 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/huandu/xstrings v1.3.2 // indirect
-	github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/juju/ansiterm v0.0.0-20180109212912-720a0952cc2a // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
